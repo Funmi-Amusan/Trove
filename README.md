@@ -111,5 +111,4 @@ The application is fully responsive across three breakpoints:
 - **Tablet**: 481px - 768px - Adjusted grid columns and spacing
 - **Mobile**: ≤ 480px - Single column layouts, reduced padding
 
-Responsive styles are handled via CSS modules for breakpoint-specific adjustments while inline styles handle dynamic values.
 

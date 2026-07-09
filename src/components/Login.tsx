@@ -48,7 +48,7 @@ export default function Login({ onLogin }: LoginProps) {
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
       <div className="w-full max-w-[400px] p-8 bg-white rounded-2xl shadow-lg relative z-10">
-        <div className="flex items-center justify-center mb-6">
+        <div className="flex items-center justify-center mb-4">
           <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-white text-xl font-semibold">T</span>
           </div>
@@ -111,12 +111,6 @@ export default function Login({ onLogin }: LoginProps) {
             )}
           </div>
 
-          <div className="text-right mb-1">
-            <button type="button" className="text-xs text-primary hover:underline">
-              Forgot password?
-            </button>
-          </div>
-
           <button
             type="submit"
             disabled={isLoading}
@@ -125,7 +119,13 @@ export default function Login({ onLogin }: LoginProps) {
             {isLoading ? 'Signing in...' : 'Sign in'}
           </button>
 
-          <div className="mt-4 border-t border-border pt-6">
+           <div className="text-center">
+            <button type="button" className="text-xs font-semibold text-primary hover:underline">
+              Forgot password?
+            </button>
+          </div>
+
+          <div className=" border-t border-border pt-6">
             <p className="text-xs text-text-neutral text-center mb-3">
               Don't have an account?
             </p>
