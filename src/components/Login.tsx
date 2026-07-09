@@ -44,10 +44,12 @@ export default function Login({ onLogin }: LoginProps) {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-page-background">
-      <div className="w-full max-w-[400px] p-8 bg-white rounded-2xl shadow-lg">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-page-background relative overflow-hidden">
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="w-full max-w-[400px] p-8 bg-white rounded-2xl shadow-lg relative z-10">
         <div className="flex items-center justify-center mb-6">
-          <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+          <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-white text-xl font-semibold">T</span>
           </div>
         </div>
@@ -56,7 +58,7 @@ export default function Login({ onLogin }: LoginProps) {
           Welcome back
         </h1>
         <p className="text-sm text-text-neutral mb-8 text-center">
-          Sign in to view your portfolio
+          Sign into your account
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -68,7 +70,7 @@ export default function Login({ onLogin }: LoginProps) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
+              placeholder="name@example.com"
               className={`w-full px-4 py-3 text-sm border rounded-lg bg-background-default text-text-default outline-none transition-all placeholder:text-text-disabled ${
                 errors.email ? 'border-negative' : 'border-border focus:border-primary focus:ring-2 focus:ring-primary/10'
               }`}
@@ -89,7 +91,7 @@ export default function Login({ onLogin }: LoginProps) {
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 className={`w-full px-4 py-3 pr-10 text-sm border rounded-lg bg-background-default text-text-default outline-none transition-all placeholder:text-text-disabled ${
                   errors.password ? 'border-negative' : 'border-border focus:border-primary focus:ring-2 focus:ring-primary/10'
                 }`}
@@ -124,6 +126,9 @@ export default function Login({ onLogin }: LoginProps) {
           </button>
 
           <div className="mt-4 border-t border-border pt-6">
+            <p className="text-xs text-text-neutral text-center mb-3">
+              Don't have an account?
+            </p>
             <button 
               type="button" 
               className="w-full px-4 py-3 text-sm font-medium text-text-default bg-white border border-border rounded-lg transition-all hover:bg-background-default active:translate-y-px flex items-center justify-center"
